@@ -1,5 +1,6 @@
 from controls.tda.linked.linkedList import LinkedList
 from controls.exception.linkedEmptyException import LinkedEmpty
+import json
 
 class StackOperation (LinkedList):
     def __init__(self, tope):
@@ -47,4 +48,19 @@ class StackOperation (LinkedList):
         self._head = None
         self._length = 0
         return True
-   
+    
+
+
+# ...resto de tu código...
+
+    @property
+    def serializer(self):
+        aux = "["
+        current = self._head
+        while current is not None:
+            aux += json.dumps(current._data)
+            if current._next is not None:
+                aux += ","
+            current = current._next
+        aux += "]"
+        return aux

@@ -28,7 +28,6 @@ class Stack ():
         self.__stack.push(data)
         self._length += 1
     
-    
     @property
     def pop(self):
         self._length -= 1
@@ -43,6 +42,7 @@ class Stack ():
     @property
     def print(self):
         self.__stack.print
+   
 
     def is_empty(self):
         return self.__stack.is_empty
