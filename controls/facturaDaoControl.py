@@ -5,6 +5,15 @@ class FacturaDaoControl(DaoAdapterLinked):
     def __init__(self):
         super().__init__(Factura)
         self.__factura = None
+        self.__tipo_ruc = Factura._tipo_ruc
+
+    @property
+    def _tipo_ruc(self):
+        return self.__tipo_ruc
+
+    @_tipo_ruc.setter
+    def _tipo_ruc(self, value):
+        self.__tipo_ruc = value
 
     @property
     def _factura(self):
@@ -30,3 +39,6 @@ class FacturaDaoControl(DaoAdapterLinked):
     def get_all(self):
         return self.lista.get_all_invoices
     
+    @property
+    def serializer(self):
+        return self.__factura.serializer

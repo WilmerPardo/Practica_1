@@ -19,7 +19,7 @@ class DaoAdapter(Generic[T]):
             datos = json.load(f)
             self.stack.clear
             for data in datos:
-                print(type(data))
+#                print(type(data))
                 a = self.atype().deserializer(data)
                 self.stack.push(a)
             f.close()
@@ -30,9 +30,9 @@ class DaoAdapter(Generic[T]):
     def __transform__(self):
         aux = "["
         for i in range(self.stack._stack._length):
-            print(self.stack._stack.get(i)._stack.__class__)
+         #   print(self.stack._stack.get(i)._stack.__class__)
             aux += self.stack._stack.get(i)._stack.serializer
-            print(aux)
+          #  print(aux)
             if i < self.stack._stack._length - 1:
                 aux += ","
         aux += "]"
@@ -51,12 +51,12 @@ class DaoAdapter(Generic[T]):
     
 
     def _save(self, data: T):
-        print(data)
         self._list()
         self.stack.push(data)
         f = open(self.URL+self.file, "w")
         f.write(self.__transform__())
         f.close()
+
         
     
     def merge(self, data: T):
