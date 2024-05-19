@@ -30,6 +30,13 @@ try:
     facturaDao._factura._fecha = "2021-10-10"
     facturaDao.save
 
+    facturaDao._factura._monto = 3000.0
+    facturaDao._factura._usuario = "Anthony"
+    facturaDao._factura._ruc = "1234567890"
+    facturaDao._factura._tipo_ruc = "PROFESIONAL"
+    facturaDao._factura._fecha = "2021-10-10"
+    facturaDao.save
+
     facturaDao._factura._monto = 1000.0
     facturaDao._factura._usuario = "Cristhian"
     facturaDao._factura._ruc = "1234567890"
