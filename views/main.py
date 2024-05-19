@@ -47,11 +47,13 @@ try:
 
     for factura in facturaDao.get_all:
         retencion.generarRetencion(factura)
-        
+    
         historial._retencion.generarRetencion(factura)
         
+    print("xdddd")
     retencion.printHistorial
 
+    print("xdddd")
     historial.save()
     
     #factura._usuario = "Santiago"
