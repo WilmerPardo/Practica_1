@@ -18,7 +18,7 @@ def lista_historial():
 def ver_guardad():
     return render_template('factura/guardar.html')
 
-""" 
+
 @router.route('/historial/guardar', methods=['POST'])
 def guardar_factura():
     factura = FacturaDaoControl()
@@ -28,4 +28,4 @@ def guardar_factura():
     factura._factura._tipo_ruc = request.form['tipo_ruc']
     factura._factura._fecha = request.form['fecha']
     factura.save   
-    return redirect('/historial', code = 302) """
+    return redirect('/historial', code = 302)
