@@ -1,5 +1,7 @@
 from models.factura import Factura
 from controls.dao.daoAdapterLinked import DaoAdapterLinked
+from controls.dao.daoArrays import ArrayDaoAdapter
+
 
 class FacturaDaoControl(DaoAdapterLinked):
     def __init__(self):
@@ -38,10 +40,9 @@ class FacturaDaoControl(DaoAdapterLinked):
 
     @property
     def get_all(self):
-       # for factura in self.lista.get_all_invoices:
-        #    return(factura)
         return self.lista.get_all_invoices
     
     @property
     def serializer(self):
         return self.__factura.serializer
+    
