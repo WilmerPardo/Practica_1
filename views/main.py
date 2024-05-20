@@ -42,18 +42,15 @@ try:
     facturaDao._factura._fecha = "2021-10-10"
     facturaDao.save
 
-    # Asumiendo que facturas es un generador de facturas
+
     for factura in facturaDao.get_all:
         historial.generarRetencion(factura)
-    #for factura in facturaDao.get_all:
-        #retencion.generarRetencion(factura)
-    
+    #historial.generarRetencion(facturaDao.get_all)
     historial.printHistorial()
-    
+
+    #historial.generarRetencion(facturaDao.lista.get_all_invoices)
 
     historial.save()
-   # retencion.printHistorial
-
 
 except Exception as e:
     print(e)

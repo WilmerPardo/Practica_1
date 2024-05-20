@@ -1,24 +1,35 @@
-{%extends "template.html"%}
-{%block content%}
-<h2 class = "text-white">Lista de personas</h2>
+{% extends "template.html"%}
+{% block content%}
+<h2 class = "text-white">Historial de Retenciones</h2>
 <div class="booking-form-body">
-    <a href="/personas/ver" class="btn btn-danger">AGREGAR</a>
+    <a href="/historial/ver" class="btn btn-danger">AGREGAR</a>
     <table id="tabla" class="table text-white">
         <thead>
-            <th>Nro</th>
-            <th>Factura</th>
-            <th>dni</th>
-            <th>Actions</th>
+            <th>Factura Nro</th>
+            <th>Usuario</th>
+            <th>RUC</th>
+            <th>Monto</th>
+            <th>Tipo_RUC</th>
+            <th>Retencion</th>
         </thead>
         <tbody>
-            {% for item in lista %}
+            {% for item in lista%}
             <tr>
-                <td>1</td>
-                <td>{{item.apellido}} {{item.nombre}}</td>
-                <td>{{item.dni}}</td>
-                <td><a href="/personas/editar/{{item.id}}" class="btn btn-info">MODIFICAR</a></td>
+                <td>{{item.id}} </td>
+                <td>{{item.usuario}} </td>
+                <td>{{item.ruc}} </td>
+                <td>{{item.monto}} </td>
+                <td>{{item.tipo_ruc}} </td>
+                <td>
+                    {% if item.tipo_ruc == 'EDUCATIVO' %}
+                        {{ item.monto * 0.08}}
+                    {% else %}
+                        {{ item.monto * 0.10 }}
+                    {% endif %}
+                 </td>
             </tr>
             {% endfor %}
+
         </tbody>
     </table> 
 </div>

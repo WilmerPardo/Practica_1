@@ -28,14 +28,12 @@ class DaoAdapter(Generic[T]):
     
 
     def __transform__(self):
-        aux = "["
+        aux = ""
         for i in range(self.stack._stack._length):
-         #   print(self.stack._stack.get(i)._stack.__class__)
             aux += self.stack._stack.get(i)._stack.serializer
-          #  print(aux)
             if i < self.stack._stack._length - 1:
                 aux += ","
-        aux += "]"
+        aux += ""
         return aux
 
     def to_dic(self):

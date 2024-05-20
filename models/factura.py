@@ -5,7 +5,7 @@ class Factura():
         self.__id = 0
         self.__usuario = ''
         self.__ruc = ''
-        self.__monto = 0.0
+        self.__monto = 0.00
         self.__tipo_ruc = enumTipoRuc
 
     @property
