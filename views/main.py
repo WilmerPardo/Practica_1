@@ -1,8 +1,9 @@
 import sys
 sys.path.append('../')
+import os
+import psutil
+from time import time
 
-#from models.factura import Factura
-#from models.retencion import Retencion
 from controls.retencionDaoControl import RetencionDaoControl
 from controls.facturaDaoControl import FacturaDaoControl
 
@@ -13,7 +14,7 @@ historial = RetencionDaoControl()
 
 
 try:
-
+    tiempoInicio = time()
 
     facturaDao._factura._monto = 1000.0
     facturaDao._factura._usuario = "Santiago"
@@ -45,12 +46,20 @@ try:
     facturaDao.save
 
     for factura in facturaDao.get_all:
-        historial.generarRetencion(factura)
+        historial.generarRetencion(factura) #ESTO UTILIZA PILAS
    
     historial.printHistorial()
     historial.save()
 
- 
+
+
+    tiempoFinal = time()
+    print("Tiempo de ejecución: ", tiempoFinal - tiempoInicio)
+
+    process = psutil.Process(os.getpid())
+    memory_usage = process.memory_info().rss / 1024 ** 2
+    print(f"La memoria utilizada por el programa es: {memory_usage} MB")
+
 except Exception as e:
     print(e)
 

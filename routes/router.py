@@ -28,6 +28,6 @@ def guardar_factura():
     factura._factura._ruc = request.form['ruc']
     factura._factura._tipo_ruc = request.form['tipo_ruc']
     factura._factura._fecha = request.form['fecha']
-
+    
 
     return redirect('/historial', code = 302)
