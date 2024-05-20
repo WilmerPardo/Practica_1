@@ -58,7 +58,6 @@ class RetencionDaoControl(DaoAdapter):
         print('')
         
 
-
     def save(self):
         if self.__retencion is None:
             self.__retencion = Retencion()

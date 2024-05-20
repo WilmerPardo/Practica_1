@@ -35,6 +35,7 @@ class FacturaDaoControl(DaoAdapterLinked):
         self.__factura._id = self._lista._length + 1
         self._save(self.__factura)
 
+
     @property
     def get_all(self):
        # for factura in self.lista.get_all_invoices:

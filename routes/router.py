@@ -21,11 +21,13 @@ def ver_guardad():
 
 @router.route('/historial/guardar', methods=['POST'])
 def guardar_factura():
+
     factura = FacturaDaoControl()
     factura._factura._usuario = request.form['usuario']
     factura._factura._monto = request.form['monto']
     factura._factura._ruc = request.form['ruc']
     factura._factura._tipo_ruc = request.form['tipo_ruc']
     factura._factura._fecha = request.form['fecha']
-    factura.save   
+
+
     return redirect('/historial', code = 302)
