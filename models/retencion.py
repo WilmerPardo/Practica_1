@@ -4,7 +4,7 @@ from controls.tda.stack.stack import Stack
 class Retencion:
     def __init__(self):
         self.__id = 0 
-        self.__historialRetenciones = Stack(20)
+        self.__historialRetenciones = ''#Stack(20)
 
     @property
     def _id(self):
