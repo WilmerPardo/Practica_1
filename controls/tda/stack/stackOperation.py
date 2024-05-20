@@ -30,8 +30,8 @@ class StackOperation (LinkedList):
         if self.isEmpty:
             raise LinkedEmpty("Stack is empty")
         else: 
-            return self.delete(0)
-        
+            return self.get(0)
+    
     @property
     def print(self):
         print('Elementos:')

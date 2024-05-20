@@ -1,8 +1,8 @@
-{%extends "template.html"%}
-{%block content%}
+{% extends "template.html"%}
+{% block content%}
 <h2 class = "text-white">Historial de Retenciones</h2>
 <div class="booking-form-body">
-    <a href="/historial" class="btn btn-danger">AGREGAR</a>
+    <a href="/historial/ver" class="btn btn-danger">AGREGAR</a>
     <table id="tabla" class="table text-white">
         <thead>
             <th>Factura Nro</th>
@@ -13,16 +13,20 @@
             <th>Retencion</th>
         </thead>
         <tbody>
-            {% for item in lista %}
+            {% for item in lista%}
             <tr>
                 <td>{{item.id}} </td>
                 <td>{{item.usuario}} </td>
                 <td>{{item.ruc}} </td>
                 <td>{{item.monto}} </td>
                 <td>{{item.tipo_ruc}} </td>
-                {% for item in retencion %}
-                <td>{{item.retencion}} </td>
-                {% endfor %}
+                <td>
+                    {% if item.tipo_ruc == 'EDUCATIVO' %}
+                        {{ item.monto * 0.08}}
+                    {% else %}
+                        {{ item.monto * 0.10 }}
+                    {% endif %}
+                 </td>
             </tr>
             {% endfor %}
 

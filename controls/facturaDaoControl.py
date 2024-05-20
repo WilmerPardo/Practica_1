@@ -37,6 +37,8 @@ class FacturaDaoControl(DaoAdapterLinked):
 
     @property
     def get_all(self):
+       # for factura in self.lista.get_all_invoices:
+        #    return(factura)
         return self.lista.get_all_invoices
     
     @property

@@ -45,8 +45,10 @@ try:
 
     for factura in facturaDao.get_all:
         historial.generarRetencion(factura)
-    
+    #historial.generarRetencion(facturaDao.get_all)
     historial.printHistorial()
+
+    #historial.generarRetencion(facturaDao.lista.get_all_invoices)
 
     historial.save()
 
