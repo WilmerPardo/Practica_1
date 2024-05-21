@@ -14,7 +14,7 @@ historial = RetencionDaoControl()
 
 
 try:
-    tiempoInicio = time()
+    # tiempoInicio = time() 
 
     facturaDao._factura._monto = 1000.0
     facturaDao._factura._usuario = "Santiago"
@@ -45,6 +45,8 @@ try:
     facturaDao._factura._fecha = "2021-10-10"
     facturaDao.save
 
+
+    
     for factura in facturaDao.get_all:
         historial.generarRetencion(factura) #ESTO UTILIZA PILAS
    
@@ -52,13 +54,13 @@ try:
     historial.save()
 
 
-
+    """ 
     tiempoFinal = time()
     print("Tiempo de ejecución: ", tiempoFinal - tiempoInicio)
 
     process = psutil.Process(os.getpid())
     memory_usage = process.memory_info().rss / 1024 ** 2
-    print(f"La memoria utilizada por el programa es: {memory_usage} MB")
+    print(f"La memoria utilizada por el programa es: {memory_usage} MB") """
 
 except Exception as e:
     print(e)
