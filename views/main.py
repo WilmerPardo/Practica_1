@@ -45,6 +45,7 @@ try:
     facturaDao._factura._fecha = "2021-10-10"
     facturaDao.save
 
+    
     for factura in facturaDao.get_all:
         historial.generarRetencion(factura) #ESTO UTILIZA PILAS
    
